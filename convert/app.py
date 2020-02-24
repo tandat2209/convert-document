@@ -90,4 +90,3 @@ def convert():
             os.unlink(upload_file)
         if os.path.exists(converter.OUT):
             os.unlink(converter.OUT)
-        lock.release()
