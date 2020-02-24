@@ -50,9 +50,6 @@ def info():
 
 @app.route("/convert", methods=['POST'])
 def convert():
-    acquired = lock.acquire(timeout=1)
-    if app.is_dead or not acquired:
-        return ("BUSY", 503)
     timeout = int(request.args.get('timeout', 1000))
     upload_file = None
     output_format = request.form.get('format')
